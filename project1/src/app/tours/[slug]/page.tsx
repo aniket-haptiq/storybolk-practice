@@ -1,9 +1,18 @@
 import { getStoryblokApi,StoryblokStory } from "@storyblok/react/rsc";
 
+export const generateStaticParams=async()=>{
+  const client=getStoryblokApi();
+  const response= await client.getStories({
+    content_type:"tour",
+    version:process.env.NODE_ENV==="development" ?"draft":"published",
+  });
+  return response.data.stories.map((story)=>({slug:story.slug}));
+};
+
 const fetchTourPage=async(slug:string)=>{
     const client=getStoryblokApi();
     const response=await client.getStory(`tours/${slug}`,{
-        version:"draft", 
+        version:process.env.NODE_ENV==="development" ?"draft":"published",
     });
     return response.data.story;
 };
@@ -16,37 +25,3 @@ const TourPage = async ({ params }: { params: { slug: string } }) => {
 };
 
 export default TourPage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const TourPage= async(props:any)=>{
-//     const story=await fetchTourPage(props.params.slug)
-//     return (
-//     <div>
-//         <h4>Slug Page... / Dynamic Page</h4>
-//         <p>{JSON.stringify(story,null,2)}</p>
-//     </div>);
-// };
