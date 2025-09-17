@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Hero=(params:any)=>{
     return (
         <section className="container mx-auto px-4 w-full pt-16 pb-8">

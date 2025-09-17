@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Testimonial=(params:any)=>{
     return (
         <div className="bg-white p-8 rounded-sm shadow">
