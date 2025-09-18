@@ -1,7 +1,6 @@
 import { RecommendedTour } from "@/components/RecommendedTour";
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import { StoryblokComponent } from "@storyblok/react";
-import "@/app/layout"; 
 
 // Force this page to run dynamically on every request
 export const dynamic = "force-dynamic";

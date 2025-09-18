@@ -1,10 +1,11 @@
 import { getStoryblokApi, StoryblokStory } from "@storyblok/react/rsc";
+import "@/app/layout"; 
 
 // Mark this page as dynamic
 export const dynamic = "force-dynamic";
 
-const client = getStoryblokApi();
 export const generateStaticParams = async () => {
+  const client = getStoryblokApi();
   const response = await client.getStories({
     content_type: "tour",
     version: process.env.NODE_ENV === "development" ? "draft" : "published",
