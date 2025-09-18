@@ -16,8 +16,9 @@ const fetchTourPage = async () => {
 };
 
 // Fetch all individual tour stories
-const fetchAllTours = async () => {
+
   const client = getStoryblokApi();
+const fetchAllTours = async () => {
   const response = await client.getStories({
     content_type: "tour",
     version: process.env.NODE_ENV === "development" ? "draft" : "published",
