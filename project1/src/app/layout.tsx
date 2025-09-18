@@ -48,11 +48,7 @@ storyblokInit({
     },
 });
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({  children,}: Readonly<{  children: React.ReactNode;}>) {
   return (
     <StoryblokProvider>
       <html lang="en">
@@ -65,8 +61,7 @@ export default function RootLayout({
         </header>
         {children}
       </body>
-    </html>
-      
+    </html>      
     </StoryblokProvider>
     
   );
