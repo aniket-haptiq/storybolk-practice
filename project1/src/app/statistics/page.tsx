@@ -1,47 +1,18 @@
-import { RecommendedTour } from "@/components/RecommendedTour";
-import { getStoryblokApi } from "@storyblok/react/rsc";
-import { StoryblokComponent } from "@storyblok/react";
+import { getStoryblokApi, StoryblokStory } from "@storyblok/react/rsc";
 
-// Force this page to run dynamically on every request
-export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic"; // Ensure this page is not statically prerendered
 
-// Fetch a general "tours" page story
-const fetchTourPage = async () => {
+const fetchStatPage = async () => {
   const client = getStoryblokApi();
-  const response = await client.getStory(`tours`, {
+  const response = await client.getStory(`statistics`, {
     version: process.env.NODE_ENV === "development" ? "draft" : "published",
   });
-
   return response.data.story;
 };
 
-// Fetch all individual tour stories
-const fetchAllTours = async () => {
-  const client = getStoryblokApi();
-  const response = await client.getStories({
-    content_type: "tour",
-    version: process.env.NODE_ENV === "development" ? "draft" : "published",
-  });
-
-  return response.data.stories;
+const StatisticsPage = async () => {
+  const story = await fetchStatPage();
+  return <StoryblokStory story={story} />;
 };
 
-const TourPage = async () => {
-  const story = await fetchTourPage();
-  const tours = await fetchAllTours();
-
-  return (
-    <div>
-      <StoryblokComponent blok={story.content} />
-
-      <div className="grid md:grid-cols-2 gap-8 container mx-auto px-4 w-full py-16">
-        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-        {tours.map((tour: any) => (
-          <RecommendedTour story={tour} key={tour.content._uid} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export default TourPage;
+export default StatisticsPage;

@@ -8,6 +8,7 @@ import {Grid} from './Grid';
 import {Feature} from './Feature';
 import {Testimonial} from './Testimonial';
 import {RecommendedTours} from './RecommendedTours';
+import {StatisticsSection} from './blok/StatisticsSection';
 
 storyblokInit({
   components: {
@@ -18,6 +19,7 @@ storyblokInit({
     feature: Feature,
     testimonial: Testimonial,
     recommended_tours: RecommendedTours,
+    statistics_section: StatisticsSection,
   },
   enableFallbackComponent: true,
 });
