@@ -1,28 +1,30 @@
-"use client";
-import  type { PropsWithChildren } from "react";
-import { storyblokInit } from "@storyblok/react/rsc";
-import {Tour} from './Tour';
-import {Page} from './Page';
-import {Hero} from './Hero';
-import {Grid} from './Grid';
-import {Feature} from './Feature';
-import {Testimonial} from './Testimonial';
-import {RecommendedTours} from './RecommendedTours';
-import {StatisticsSection} from './blok/StatisticsSection';
+// "use client";
+// import  type { PropsWithChildren } from "react";
+// import { storyblokInit } from "@storyblok/react/rsc";
+// import {Tour} from './Tour';
+// import {Page} from './Page';
+// import {Hero} from './Hero';
+// import {Grid} from './Grid';
+// import {Feature} from './Feature';
+// import {Testimonial} from './Testimonial';
+// import {RecommendedTours} from './RecommendedTours';
+// import {StatisticsSection} from './blok/StatisticsSection';
 
-storyblokInit({
-  components: {
-    tour: Tour,
-    page: Page,
-    hero: Hero,
-    grid: Grid,
-    feature: Feature,
-    testimonial: Testimonial,
-    recommended_tours: RecommendedTours,
-    statistics_section: StatisticsSection,
-  },
-  enableFallbackComponent: true,
-});
+import { PropsWithChildren } from "react";
+
+// storyblokInit({
+//   components: {
+//     tour: Tour,
+//     page: Page,
+//     hero: Hero,
+//     grid: Grid,
+//     feature: Feature,
+//     testimonial: Testimonial,
+//     recommended_tours: RecommendedTours,
+//     statistics_section: StatisticsSection,
+//   },
+//   enableFallbackComponent: true,
+// });
 
 export const StoryblokProvider=({children}:PropsWithChildren)=>{
     return<>
