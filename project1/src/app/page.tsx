@@ -13,6 +13,17 @@ const fetchHomePage = async () => {
 
 const HomePage = async () => {
   const story = await fetchHomePage();
+
+  if (!story) {
+    return (
+      <div className="container mx-auto py-16 text-center text-gray-600">
+        <h1 className="text-2xl font-semibold">Home Page Not Found</h1>
+        <p className="mt-2">
+          Please check your Storyblok space or publish the content.
+        </p>
+      </div>
+    );
+  }
   return <StoryblokStory story={story} />;
 };
 

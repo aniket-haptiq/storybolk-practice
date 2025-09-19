@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from 'next/font/google';
 import "./globals.css";
 import { storyblokInit,apiPlugin } from "@storyblok/react/rsc";
 import { StoryblokProvider } from "@/components/StoryblokProvider";
@@ -11,11 +10,13 @@ import {Feature} from '../components/Feature';
 import {Testimonial} from '../components/Testimonial';
 import {RecommendedTours} from '../components/RecommendedTours';
 import Link from "next/link";
+import {StatisticsSection} from '../components/blok/StatisticsSection';
+import { Titillium_Web } from "next/font/google";
 
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
+const titillium = Titillium_Web({
+  subsets: ["latin"],
+  weight: ["400","600","700"],
+  variable: "--font-titillium",
 });
 
 export const metadata: Metadata = {
@@ -45,6 +46,7 @@ storyblokInit({
       feature: Feature,
       testimonial: Testimonial,
       recommended_tours: RecommendedTours,
+      statistics_section: StatisticsSection,//      stat_item: StatItem,
     },
 });
 
@@ -52,11 +54,12 @@ export default function RootLayout({  children,}: Readonly<{  children: React.Re
   return (
     <StoryblokProvider>
       <html lang="en">
-      <body className={`${inter.className} bg-blue-50`}>
+      <body className={`${titillium.className} bg-blue-50`}>
         <header>
-          <nav className="container mx-auto px-4 w-full py-8 flex justify-between">
+          <nav className="container mx-auto px-4 w-full py-6 flex justify-between font-bold">
             <Link href={"/"}>Home</Link>
             <Link href={"/tours"}>Tours</Link>
+            <Link href={"/statistics"}>Statistics</Link>
           </nav>
         </header>
         {children}

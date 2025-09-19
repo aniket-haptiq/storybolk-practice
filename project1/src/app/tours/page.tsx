@@ -33,7 +33,6 @@ const TourPage = async () => {
   return (
     <div>
       <StoryblokComponent blok={story.content} />
-
       <div className="grid md:grid-cols-2 gap-8 container mx-auto px-4 w-full py-16">
         {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
         {tours.map((tour: any) => (
