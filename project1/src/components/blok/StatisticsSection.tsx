@@ -9,7 +9,7 @@ interface StatisticsSectionBlok extends SbBlokData {
   heading: string;
   description: string;
   data_points: DataPoint[];
-  background_color?: string; // new optional field
+  background_color?: string; 
 }
 
 
@@ -21,7 +21,7 @@ export const StatisticsSection = ({ blok }: StatisticsSectionProps) => {
   const { heading, description, data_points, background_color } = blok;
 
   return (
-    <div style={{ backgroundColor:"#0D2C6B"||background_color }}>
+    <div style={{ backgroundColor: background_color || "#0D2C6B" }}>
       <section
         className="max-w-[1349px] mx-auto text-[#FFFFFF] py-[62px] px-6"
         {...storyblokEditable(blok)}
