@@ -1,9 +1,9 @@
 {
-  "name": "project1",
+  "name": "project2",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "dotenv -e .env -- next dev --experimental-https",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -17,11 +17,9 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "dotenv-cli": "^10.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.3",
     "tailwindcss": "^4",
