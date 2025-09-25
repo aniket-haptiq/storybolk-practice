@@ -1,5 +1,6 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 import { BadgeSectionProps } from "@/types/storyblok";
+import Link from "next/link";
 
 const BadgeSection = ({ blok }: BadgeSectionProps) => {
 const {
@@ -39,15 +40,15 @@ const linkRel = linkTarget === "_blank" ? "noopener noreferrer" : undefined;
         {/* CTA */}
         {button_text && (
           <div className="mt-10">
-            <a
+            <Link
               href={linkUrl}
               target={linkTarget}
               rel={ linkRel }
               style={{ backgroundColor: buttonBg }}
-              className="text-[18px] font-semibold text-white px-6 py-3 rounded-[5px] border border-white "
+              className="text-lg font-semibold text-white px-6 py-3 rounded border border-white "
             >
               {button_text}
-            </a>
+            </Link>
           </div>
         )}
       </div>

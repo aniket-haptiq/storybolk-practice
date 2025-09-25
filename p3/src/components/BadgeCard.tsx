@@ -1,5 +1,6 @@
 import { storyblokEditable } from "@storyblok/react";
 import Image from "next/image";
+import Link from "next/link";
 import { BadgeCardProps } from "@/types/storyblok";
 
 const BadgeCard = ({ blok }: BadgeCardProps) => {
@@ -45,7 +46,7 @@ const BadgeCard = ({ blok }: BadgeCardProps) => {
       )}
 
       <h3
-        className="font-bold text-[18px] leading-[24px] tracking-[0%] mb-2"
+        className="font-bold text-lg leading-6 mb-2"
         style={{ color: cardTitleColor}}
       >
         {title}
@@ -53,7 +54,7 @@ const BadgeCard = ({ blok }: BadgeCardProps) => {
 
       {description && (
         <p
-          className="font-[Arial] font-normal text-[10px] leading-[12px] tracking-[0] mb-2"
+          className="font-normal text-[10px] leading-3 mb-2"
           style={{ color: cardDescColor }}
         >
           {description}
@@ -61,15 +62,15 @@ const BadgeCard = ({ blok }: BadgeCardProps) => {
       )}
 
       {linkUrl&& (
-        <a
+        <Link
           href={linkUrl}
           target={linkTarget}
           rel={linkRel}
-          className="font-[Arial] font-bold text-[14px] leading-[150%] tracking-[0]"
+          className="font-bold text-base leading-relaxed"
           style={{ color: cardLinkColor}}
         >
           {lm_text}
-        </a>
+        </Link>
       )}
     </div>
   );
