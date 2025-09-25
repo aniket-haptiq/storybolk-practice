@@ -1,5 +1,6 @@
 // Common Storyblok field types
 export type StoryblokLink = {
+  target: string;
   url?: string;
   cached_url?: string;
 };
@@ -49,5 +50,18 @@ export type BadgeCardProps = {
     lm_link?: StoryblokLink;
     image?: StoryblokImage;
     background_color_card?: StoryblokColor;
+  };
+};
+
+//Accreditation Section
+export type AccreditationProps = {
+  blok: {
+    logo: StoryblokImage;
+    title: string;
+    link_url: StoryblokLink;
+    link_text: string;
+    bg_sec_col:StoryblokColor;
+    title_col:StoryblokColor;
+    link_text_col:StoryblokColor;
   };
 };
