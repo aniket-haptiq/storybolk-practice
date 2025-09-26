@@ -1,5 +1,3 @@
-import { HTMLAttributeAnchorTarget } from "react";
-
 // Common Storyblok field types
 export type StoryblokLink = {
   target: HTMLAttributeAnchorTarget | undefined;
@@ -37,7 +35,6 @@ export type BadgeSectionProps = {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     badges?: any[];
     background_color?: StoryblokColor;
-    text_color?:StoryblokColor;
     link_bg_color?:StoryblokColor;
   };
 };
@@ -56,5 +53,18 @@ export type BadgeCardProps = {
     card_title_color?:StoryblokColor;
     card_desc_col?:StoryblokColor;
     card_link_col?:StoryblokColor;
+  };
+};
+
+//Accreditation Section
+export type AccreditationProps = {
+  blok: {
+    logo: StoryblokImage;
+    title: string;
+    link_url: StoryblokLink;
+    link_text: string;
+    bg_sec_col:StoryblokColor;
+    title_col:StoryblokColor;
+    link_text_col:StoryblokColor;
   };
 };

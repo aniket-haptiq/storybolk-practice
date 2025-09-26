@@ -33,6 +33,10 @@ const BadgeCard = ({ blok }: BadgeCardProps) => {
     <div
       {...storyblokEditable(blok)}
       className="shadow-[0px_8px_16px_0px_#0000000A] rounded-lg p-6 flex flex-col items-center text-center align-middle "
+
+      style={{ backgroundColor: background_color_card?.color }}
+    >
+
       style={{ backgroundColor: cardBgColor}}
     >
       {imageUrl && (
