@@ -1,3 +1,5 @@
+import { HTMLAttributeAnchorTarget } from "react";
+
 // Common Storyblok field types
 export type StoryblokLink = {
   target: HTMLAttributeAnchorTarget | undefined;
