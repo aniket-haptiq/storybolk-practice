@@ -1,6 +1,6 @@
 // Common Storyblok field types
 export type StoryblokLink = {
-  target: string;
+  target: HTMLAttributeAnchorTarget | undefined;
   url?: string;
   cached_url?: string;
 };
@@ -35,7 +35,7 @@ export type BadgeSectionProps = {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     badges?: any[];
     background_color?: StoryblokColor;
-    text_color?:StoryblokColor;
+    link_bg_color?:StoryblokColor;
   };
 };
 
@@ -50,6 +50,9 @@ export type BadgeCardProps = {
     lm_link?: StoryblokLink;
     image?: StoryblokImage;
     background_color_card?: StoryblokColor;
+    card_title_color?:StoryblokColor;
+    card_desc_col?:StoryblokColor;
+    card_link_col?:StoryblokColor;
   };
 };
 
