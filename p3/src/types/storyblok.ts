@@ -70,3 +70,24 @@ export type AccreditationProps = {
     link_text_col:StoryblokColor;
   };
 };
+
+//Statistics Section
+export type StatItem = {
+    _uid: string;
+    value: string;   // Storyblok stores numbers as strings
+    suffix?: string; // "+", "K", "M"
+    label: string;
+    component: string;
+};
+
+export type StatProps = {
+  blok:{
+  _uid: string;
+  component: string;
+  headline: string;
+  description: string;
+  stats: StatItem[];
+  background_color?: StoryblokColor;
+  font_color?: StoryblokColor;
+  };
+};
